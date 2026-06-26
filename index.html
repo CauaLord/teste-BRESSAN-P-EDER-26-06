@@ -23,13 +23,41 @@
   <style>
     body { margin: 0; background: #DCDFE3; font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     * { box-sizing: border-box; }
+
+    /* ---------- MOBILE RESPONSIVE ---------- */
+    @media (max-width: 600px) {
+      .email-stage      { padding: 18px 12px 40px !important; }
+      .preheader-meta   { flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; }
+      .preheader-bar    { padding: 12px 20px !important; }
+      .preheader-edition{ font-size: 9.5px !important; letter-spacing: 0.08em !important; }
+      .logo-header      { padding: 26px 20px 22px !important; }
+      .logo-header img  { width: 150px !important; }
+      .hero-block       { padding: 32px 22px 8px !important; }
+      .hero-accent      { left: 22px !important; }
+      .hero-title       { font-size: 33px !important; }
+      .letter-body      { padding: 30px 22px 4px !important; }
+      .letter-body p,
+      .closing-block p,
+      .signature-block .sig-line { font-size: 15px !important; }
+      .lead-callout     { font-size: 24px !important; }
+      .receive-box      { margin: 0 20px !important; padding: 22px 20px 20px !important; }
+      .receive-grid     { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .closing-block    { padding: 30px 22px 0 !important; }
+      .cta-btn          { display: flex !important; width: 100% !important; justify-content: center !important; padding: 16px 20px !important; }
+      .signature-block  { padding: 32px 22px 0 !important; }
+      .logo-footer      { padding: 8px 24px 28px !important; }
+      .logo-footer img  { width: 170px !important; }
+      .footer-block     { padding: 30px 22px 28px !important; }
+      .footer-cols      { gap: 18px !important; }
+      .footer-legal     { gap: 12px !important; }
+    }
   </style>
 </helmet>
 
-<div style="min-height: 100vh; background: #DCDFE3; padding: 32px 16px 64px; display: flex; flex-direction: column; align-items: center;">
+<div class="email-stage" style="min-height: 100vh; background: #DCDFE3; padding: 32px 16px 64px; display: flex; flex-direction: column; align-items: center;">
 
   <!-- Email client preview meta (sender / subject) -->
-  <div style="width: 100%; max-width: 640px; margin-bottom: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7177; display: flex; justify-content: space-between; align-items: center;">
+  <div class="preheader-meta" style="width: 100%; max-width: 640px; margin-bottom: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7177; display: flex; justify-content: space-between; align-items: center;">
     <span>De: Thyago · Bressan Soluções Automotivas</span>
     <span>Pré-visualização do e-mail</span>
   </div>
@@ -38,7 +66,7 @@
   <div style="width: 100%; max-width: 640px; background: #FFFFFF; box-shadow: 0 2px 24px rgba(15, 22, 36, 0.10); overflow: hidden;">
 
     <!-- ====== PRE-HEADER STRIP (newsletter brand bar) ====== -->
-    <div style="background: #1A1A1A; padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2A2A2A;">
+    <div class="preheader-bar" style="background: #1A1A1A; padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2A2A2A;">
       <div style="display: flex; align-items: center; gap: 10px;">
         <!-- radar pulse mark -->
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
@@ -48,24 +76,24 @@
         </svg>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF; font-weight: 500;">RADAR BRESSAN</span>
       </div>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #9B9B9B;">EDIÇÃO Nº 001 · JUN 2026</span>
+      <span class="preheader-edition" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #9B9B9B;">EDIÇÃO Nº 001 · JUN 2026</span>
     </div>
 
-    <!-- ====== LOGO HEADER ====== -->
-    <div style="background: #FFFFFF; padding: 36px 40px 28px; border-bottom: 1px solid #ECEEF1;">
-      <img src="assets/bressan-logo-color.png" alt="Bressan Soluções Automotivas" style="display: block; width: 200px; height: auto;">
+    <!-- ====== LOGO HEADER (Bressanzito mascot + logo) ====== -->
+    <div class="logo-header" style="background: #FFFFFF; padding: 36px 40px 28px; border-bottom: 1px solid #ECEEF1; text-align: center;">
+      <img src="assets/bressanzito-logo.png" alt="Bressanzito · Bressan Soluções Automotivas" style="display: inline-block; width: 190px; max-width: 100%; height: auto;">
     </div>
 
     <!-- ====== HERO HEADLINE BLOCK ====== -->
-    <div style="background: #FFFFFF; padding: 48px 40px 40px; border-bottom: 1px solid #ECEEF1; position: relative; padding-bottom: 10px">
+    <div class="hero-block" style="background: #FFFFFF; padding: 48px 40px 40px; border-bottom: 1px solid #ECEEF1; position: relative; padding-bottom: 10px">
       <!-- subtle hairline accent (top-left corner) -->
-      <div style="position: absolute; top: 0; left: 40px; width: 36px; height: 3px; background: #2A52BE;"></div>
+      <div class="hero-accent" style="position: absolute; top: 0; left: 40px; width: 36px; height: 3px; background: #2A52BE;"></div>
 
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #2A52BE; font-weight: 600; margin-bottom: 16px;">
         Carta de abertura
       </div>
 
-      <h1 style="margin: 0; font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; font-weight: 400; font-size: 45px; line-height: 1.02; letter-spacing: 0.015em; color: #1A1A1A; text-wrap: balance">
+      <h1 class="hero-title" style="margin: 0; font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; font-weight: 400; font-size: 45px; line-height: 1.02; letter-spacing: 0.015em; color: #1A1A1A; text-wrap: balance">
         A PEÇA MAIS IMPORTANTE É VOCÊ.<br>
         <span style="color: rgb(42, 82, 190);">SEMPRE FOI.</span>
       </h1>
@@ -77,13 +105,13 @@
     </div>
 
     <!-- ====== LETTER BODY ====== -->
-    <div style="background: #FFFFFF; padding: 40px 40px 8px;">
+    <div class="letter-body" style="background: #FFFFFF; padding: 40px 40px 8px;">
 
       <p style="margin: 0 0 22px; font-size: 16px; line-height: 1.65; color: #1A1A1A; font-weight: 400;">
         Ao longo dos anos, construímos uma relação baseada em <strong style="font-weight: 600;">confiança, atendimento e parceria</strong>. E percebemos que, quase sempre, nossas conversas acontecem apenas quando existe um pedido, uma cotação ou alguma necessidade comercial.
       </p>
 
-      <p style="margin: 0 0 22px; font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; font-size: 28px; line-height: 1.05; letter-spacing: 0.02em; color: #1A1A1A;">Agora vamos mudar isso!</p>
+      <p class="lead-callout" style="margin: 0 0 22px; font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; font-size: 28px; line-height: 1.05; letter-spacing: 0.02em; color: #1A1A1A;">Agora vamos mudar isso!</p>
 
       <p style="margin: 0 0 22px; font-size: 16px; line-height: 1.65; color: #1A1A1A;">
         Meu nome é <strong style="font-weight: 600;">Thyago</strong> e, a partir de agora, estarei com você no <strong style="font-weight: 600; color: #1B2D7A;">Radar Bressan</strong> — um novo canal de relacionamento criado para compartilhar conteúdos úteis para o dia a dia do seu negócio.
@@ -96,12 +124,12 @@
     </div>
 
     <!-- ====== "O QUE VOCÊ VAI RECEBER" — 4 ITEMS ====== -->
-    <div style="background: #F2F2F2; margin: 0 40px; padding: 28px 28px 24px; border-left: 3px solid #2A52BE;">
+    <div class="receive-box" style="background: #F2F2F2; margin: 0 40px; padding: 28px 28px 24px; border-left: 3px solid #2A52BE;">
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #4A4A4A; font-weight: 600; margin-bottom: 18px;">
         O que você vai receber
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px;">
+      <div class="receive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px;">
 
         <div style="display: flex; gap: 12px; align-items: flex-start;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B2D7A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:1px;">
@@ -150,7 +178,7 @@
     </div>
 
     <!-- ====== COMMITMENT + CLOSING ====== -->
-    <div style="background: #FFFFFF; padding: 36px 40px 0;">
+    <div class="closing-block" style="background: #FFFFFF; padding: 36px 40px 0;">
 
       <p style="margin: 0 0 22px; font-size: 16px; line-height: 1.65; color: #1A1A1A;">
         Nosso compromisso é simples: enviar conteúdos <strong style="font-weight: 600;">objetivos, úteis e que façam sentido para o seu trabalho</strong>, sempre respeitando o seu tempo.
@@ -161,7 +189,7 @@
       </p>
 
       <!-- CTA -->
-      <a href="#" style="display: inline-flex; align-items: center; gap: 12px; background: #1B2D7A; color: #FFFFFF; text-decoration: none; padding: 16px 28px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; box-shadow: 0 2px 0 #0F1A4D;" style-hover="background: #2A52BE; box-shadow: 0 2px 0 #1B2D7A;">
+      <a href="#" class="cta-btn" style="display: inline-flex; align-items: center; gap: 12px; background: #1B2D7A; color: #FFFFFF; text-decoration: none; padding: 16px 28px; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; box-shadow: 0 2px 0 #0F1A4D;" style-hover="background: #2A52BE; box-shadow: 0 2px 0 #1B2D7A;">
         FALAR COM O THYAGO
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -174,8 +202,8 @@
     </div>
 
     <!-- ====== SIGNATURE ====== -->
-    <div style="background: #FFFFFF; padding: 40px 40px 44px; padding-bottom: 0px">
-      <div style="font-size: 16px; line-height: 1.65; color: #1A1A1A; margin-bottom: 18px;">Um grande abraço,</div>
+    <div class="signature-block" style="background: #FFFFFF; padding: 40px 40px 44px; padding-bottom: 0px">
+      <div class="sig-line" style="font-size: 16px; line-height: 1.65; color: #1A1A1A; margin-bottom: 18px;">Um grande abraço,</div>
 
       <div style="display: flex; align-items: flex-end; gap: 18px; padding-top: 20px; border-top: 1px solid #ECEEF1;">
         <!-- monogram tile -->
@@ -190,15 +218,15 @@
       </div>
     </div>
 
-    <!-- ====== MASCOT (Bressanzito) overlaps onto blue footer ====== -->
-    <div style="background: #FFFFFF; padding: 8px 40px 0; display: flex; justify-content: center; position: relative; z-index: 2;">
-      <img src="assets/bressanzito.png" alt="Bressanzito · Bressan Soluções Automotivas" style="display: block; width: 240px; height: auto; margin-bottom: -100px">
+    <!-- ====== CLOSING LOGO ====== -->
+    <div class="logo-footer" style="background: #FFFFFF; padding: 36px 40px 40px; display: flex; justify-content: center;">
+      <img src="assets/logo.png" alt="Bressan Soluções Automotivas" style="display: block; width: 210px; max-width: 70%; height: auto;">
     </div>
 
     <!-- ====== FOOTER ====== -->
-    <div style="background: #1B2D7A; padding: 140px 40px 30px; color: #C8D1E8; position: relative; z-index: 1; padding-bottom: 30px; padding-top: 80px">
+    <div class="footer-block" style="background: #1B2D7A; padding: 36px 40px 30px; color: #C8D1E8;">
 
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; margin-bottom: 20px;">
+      <div class="footer-cols" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; margin-bottom: 20px;">
         <div>
           <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF; font-weight: 500; margin-bottom: 8px;">BRESSAN SOLUÇÕES AUTOMOTIVAS</div>
           
@@ -214,7 +242,7 @@
 
       <div style="height: 1px; background: #2A4198; margin-bottom: 18px;"></div>
 
-      <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #8FA0CC;">
+      <div class="footer-legal" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #8FA0CC;">
         <span>© 2026 Bressan Soluções Automotivas</span>
         <div style="display: flex; gap: 18px;">
           <a href="#" style="color: #C8D1E8; text-decoration: none;">Preferências</a>
